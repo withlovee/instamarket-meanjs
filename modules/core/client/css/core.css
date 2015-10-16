@@ -116,15 +116,15 @@ body {
 .content-wrapper {
   margin: 20px 0;
 }
-.item {
+.insta-list .item {
   padding-bottom: 15px;
   padding-top: 15px;
 }
-.item a {
+.insta-list .item a {
   display: block;
   position: relative;
 }
-.item img {
+.insta-list .item img {
   width: 100%;
   height: auto;
   -webkit-transition: all 0.3s ease;
@@ -133,8 +133,8 @@ body {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.item .text,
-.item .text2 {
+.insta-list .item .text,
+.insta-list .item .text2 {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -147,7 +147,7 @@ body {
   font-size: 2.2em;
   padding: 3px 15px;
 }
-.item .text2 {
+.insta-list .item .text2 {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.4em;
   font-weight: 300;
@@ -156,7 +156,7 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   text-align: left;
 }
-.item .hover {
+.insta-list .item .hover {
   display: none;
   font-size: 2.2em;
   color: #555;
@@ -170,19 +170,19 @@ body {
   margin-top: auto;
   margin-bottom: auto;
 }
-.item .vertical-center {
+.insta-list .item .vertical-center {
   position: relative;
   top: -15px;
   display: table-cell;
   vertical-align: middle;
 }
-.item a:hover img {
+.insta-list .item a:hover img {
   opacity: 0.8;
 }
-.item a:hover .hover {
+.insta-list .item a:hover .hover {
   display: table;
 }
-.item-shoplist a:hover img {
+.shop-list .item a:hover img {
   opacity: 0.2;
 }
 .page-title {

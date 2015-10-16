@@ -14,8 +14,12 @@ angular.module('shops').config(['$stateProvider',
         url: '',
         templateUrl: 'modules/shops/client/views/list-shops.client.view.html'
       })
+      .state('shops.category', {
+        url: '/:category',
+        templateUrl: 'modules/shops/client/views/list-shops.client.view.html'
+      })
       .state('shops.view', {
-        url: '/:shopId',
+        url: '^/shop/:shopId',
         templateUrl: 'modules/shops/client/views/view-shop.client.view.html'
       });
   }

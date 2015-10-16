@@ -7,12 +7,18 @@ angular.module('shops').controller('ShopsController', ['$scope', '$stateParams',
 
     // Find a list of Shops
     $scope.find = function () {
-      $scope.shops = Shops.query();
+      if($stateParams.category){
+        $scope.shops = Shops.list.query({category: $stateParams.category});
+        $scope.page_name = $stateParams.category;
+      } else {
+        $scope.shops = Shops.list.query();
+        $scope.page_name = 'ร้านค้าทั้งหมด';
+      }
     };
 
     // Find existing Shop
     $scope.findOne = function () {
-      $scope.shop = Shops.get({
+      $scope.shop = Shops.one.get({
         shopId: $stateParams.shopId
       });
     };

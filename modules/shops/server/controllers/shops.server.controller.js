@@ -19,7 +19,19 @@ exports.read = function (req, res) {
  * List of Shops
  */
 exports.list = function (req, res) {
-  Shop.find().limit(10).exec(function (err, shops) {
+  Shop.find({is_shop: 1}).limit(100).exec(function (err, shops) {
+  // Shop.find().sort('-created').limit(10).populate('user', 'displayName').exec(function (err, shops) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.json(shops);
+    }
+  });
+};
+exports.list_by_category = function (req, res, next, category) {
+  Shop.find({is_shop: 1, category: category}).limit(10).exec(function (err, shops) {
   // Shop.find().sort('-created').limit(10).populate('user', 'displayName').exec(function (err, shops) {
     if (err) {
       return res.status(400).send({

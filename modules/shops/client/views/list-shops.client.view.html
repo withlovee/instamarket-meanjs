@@ -1,20 +1,24 @@
 <section ng-controller="ShopsController" ng-init="find()">
-  <div class="page-header">
-    <h1>Shops</h1>
-  </div>
-  <div class="list-group">
-    <a ng-repeat="shop in shops" ui-sref="shops.view({shopId: shop._id})" class="list-group-item">
-      <small class="list-group-item-text">
-        Posted on
-        <span ng-bind="shop.created | date:'mediumDate'"></span>
-        by
-        <span ng-bind="shop.username"></span>
-      </small>
-      <h4 class="list-group-item-heading" ng-bind="shop.title"></h4>
-      <p class="list-group-item-text" ng-bind="shop.content"></p>
-    </a>
-  </div>
+
+    <h1 class="page-title">
+      <span>{{page_name}}</span>
+    </h1>
+    <div class="row insta-list shop-list">
+      <div ng-repeat="shop in shops" class="col-md-4 col-sm-6 item">
+        <a ui-sref="shops.view({shopId: shop._id})">
+          <img ng-src="{{shop.profile_picture}}" fallback-src alt="{{shop.username}}">
+          <span class="text2" ng-bind="shop.username"></span>
+          <span class="hover">
+            <span class="vertical-center" ng-bind="shop.full_name"></span>
+          </span>
+        </a>
+      </div>
+      <!-- /.col-md-4 col-sm-6 item -->
+    </div>
+    <!-- /.row shop-list -->
+
+
   <div class="alert alert-warning text-center" ng-if="shops.$resolved && !shops.length">
-    No shops yet, why don't you <a ui-sref="shops.create">create one</a>?
+    No shops yet.
   </div>
 </section>

@@ -18,7 +18,10 @@ exports.invokeRolesPolicies = function () {
       resources: '/api/shops',
       permissions: '*'
     }, {
-      resources: '/api/shops/:shopId',
+      resources: '/api/shops/:category',
+      permissions: '*'
+    }, {
+      resources: '/api/shop/:shopId',
       permissions: '*'
     }]
   }]);
