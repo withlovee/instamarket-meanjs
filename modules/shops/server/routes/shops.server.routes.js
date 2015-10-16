@@ -9,12 +9,12 @@ var shopsPolicy = require('../policies/shops.server.policy'),
 module.exports = function (app) {
   // Shops collection routes
   app.route('/api/shops').all(shopsPolicy.isAllowed)
-    .get(shops.list)
+    .get(shops.list);
     // .post(shops.create);
 
   // Single shop routes
   app.route('/api/shops/:shopId').all(shopsPolicy.isAllowed)
-    .get(shops.read)
+    .get(shops.read);
     // .put(shops.update)
     // .delete(shops.delete);
 
