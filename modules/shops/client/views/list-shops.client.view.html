@@ -1,0 +1,20 @@
+<section ng-controller="ShopsController" ng-init="find()">
+  <div class="page-header">
+    <h1>Shops</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="shop in shops" ui-sref="shops.view({shopId: shop._id})" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="shop.created | date:'mediumDate'"></span>
+        by
+        <span ng-bind="shop.username"></span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="shop.title"></h4>
+      <p class="list-group-item-text" ng-bind="shop.content"></p>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="shops.$resolved && !shops.length">
+    No shops yet, why don't you <a ui-sref="shops.create">create one</a>?
+  </div>
+</section>

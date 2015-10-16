@@ -1,0 +1,14 @@
+<section ng-controller="ShopsController" ng-init="findOne()">
+  <div class="page-header">
+    <h1 ng-bind="shop.title"></h1>
+  </div>
+  <small>
+    <em class="text-muted">
+      Posted on
+      <span ng-bind="shop.created | date:'mediumDate'"></span>
+      by
+      <span ng-bind="shop.username"></span>
+    </em>
+  </small>
+  <p class="lead" ng-bind="shop.content"></p>
+</section>
