@@ -5,6 +5,7 @@
  */
 var path = require('path'),
   mongoose = require('mongoose'),
+  request = require('request'),
   Shop = mongoose.model('Shop'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
 
@@ -19,6 +20,14 @@ exports.read = function (req, res) {
  * List of Shops
  */
 exports.list = function (req, res) {
+
+  var url ='https://instamarket-xyz-ijygm8ult3yn.runscope.net/api/shops/';
+  request(url, function (error, response, body) {
+    if (!error) {
+      console.log(body);
+     }
+   });
+
   Shop.find({is_shop: 1}).limit(100).exec(function (err, shops) {
   // Shop.find().sort('-created').limit(10).populate('user', 'displayName').exec(function (err, shops) {
     if (err) {
