@@ -4,7 +4,7 @@
       <span>{{page_name}} ({{shops.length}})</span>
     </h1>
     <div class="row insta-list shop-list">
-      <div ng-repeat="shop in shops" class="col-md-4 col-sm-6 item">
+      <div ng-repeat="shop in shops" class="col-md-4 col-xs-6 item">
         <a href="http://instagram.com/{{shop.username}}" target="_blank">
           <img ng-src="{{shop.profile_picture}}" fallback-src alt="{{shop.username}}">
           <span class="text2" ng-bind="shop.username"></span>
@@ -13,7 +13,7 @@
           </span>
         </a>
       </div>
-      <!-- /.col-md-4 col-sm-6 item -->
+      <!-- /.col-md-4 col-xs-6 item -->
     </div>
     <!-- /.row shop-list -->
 
