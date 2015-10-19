@@ -5,7 +5,7 @@
     </h1>
     <div class="row insta-list shop-list">
       <div ng-repeat="shop in shops" class="col-md-4 col-sm-6 item">
-        <a ui-sref="shops.view({shopId: shop._id})">
+        <a href="http://instagram.com/{{shop.username}}" target="_blank">
           <img ng-src="{{shop.profile_picture}}" fallback-src alt="{{shop.username}}">
           <span class="text2" ng-bind="shop.username"></span>
           <span class="hover">

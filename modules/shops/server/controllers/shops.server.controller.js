@@ -42,7 +42,7 @@ exports.list = function (req, res) {
 exports.list_by_category = function (req, res, next, category) {
   Shop.find({
     is_shop: 1, 
-    bio: new RegExp(category, 'i')
+    categories: { $in: [ category ] }
   }).limit(200).exec(function (err, shops) {
   // Shop.find().sort('-created').limit(10).populate('user', 'displayName').exec(function (err, shops) {
     if (err) {
