@@ -1,13 +1,13 @@
 <section ng-controller="HomeController">
 
     <div class="row insta-list category-list">
-      <div ng-repeat="cat in categories" class="col-md-4 col-sm-6 item">
+      <div ng-repeat="cat in categories" class="col-md-4 col-xs-6 item">
         <a href="shops/{{cat}}" title="{{cat}}">
           <img ng-src="/modules/core/client/img/categories/{{cat}}.jpg" fallback-src alt="{{cat}}">
           <span class="text">{{cat}}</span>
         </a>
       </div>
-      <!-- /.col-md-4 col-sm-6 item -->
+      <!-- /.col-md-4 col-xs-6 item -->
       
     </div>
     <!-- /.row shop-list -->
