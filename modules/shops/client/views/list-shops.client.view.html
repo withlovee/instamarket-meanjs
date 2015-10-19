@@ -1,7 +1,7 @@
 <section ng-controller="ShopsController" ng-init="find()">
 
     <h1 class="page-title">
-      <span>{{page_name}}</span>
+      <span>{{page_name}} ({{shops.length}})</span>
     </h1>
     <div class="row insta-list shop-list">
       <div ng-repeat="shop in shops" class="col-md-4 col-sm-6 item">
