@@ -1,35 +1,14 @@
 <section ng-controller="HomeController">
 
-
     <div class="row insta-list category-list">
-      <div class="col-md-4 col-sm-6 item">
-        <a href="shops">
-          <img src="http://lorempixel.com/200/200/city/1/" alt="">
-          <span class="text">เสื้อผ้า</span>
+      <div ng-repeat="cat in categories" class="col-md-4 col-sm-6 item">
+        <a href="shops/{{cat}}" title="{{cat}}">
+          <img ng-src="/modules/core/client/img/categories/{{cat}}.jpg" fallback-src alt="{{cat}}">
+          <span class="text">{{cat}}</span>
         </a>
       </div>
       <!-- /.col-md-4 col-sm-6 item -->
-      <div class="col-md-4 col-sm-6 item">
-        <a href="shops">
-          <img src="http://lorempixel.com/200/200/city/1/" alt="">
-          <span class="text">เสื้อผ้า</span>
-        </a>
-      </div>
-      <!-- /.col-md-4 col-sm-6 item -->
-      <div class="col-md-4 col-sm-6 item">
-        <a href="shops">
-          <img src="http://lorempixel.com/200/200/city/1/" alt="">
-          <span class="text">เสื้อผ้า</span>
-        </a>
-      </div>
-      <!-- /.col-md-4 col-sm-6 item -->
-      <div class="col-md-4 col-sm-6 item">
-        <a href="shops">
-          <img src="http://lorempixel.com/200/200/city/1/" alt="">
-          <span class="text">เสื้อผ้า</span>
-        </a>
-      </div>
-      <!-- /.col-md-4 col-sm-6 item -->
+      
     </div>
     <!-- /.row shop-list -->
 
