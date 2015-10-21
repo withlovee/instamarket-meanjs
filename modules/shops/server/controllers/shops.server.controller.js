@@ -36,13 +36,6 @@ exports.list = function (req, res) {
 
 exports.list_by_category = function (req, res, next) {
 
-  var url ='https://instamarket-xyz-ijygm8ult3yn.runscope.net/api/shops/';
-  request(url, function (error, response, body) {
-    if (!error) {
-      console.log(body);
-     }
-   });
-
   Shop.find({
     is_shop: 1, 
     categories: req.params.category
