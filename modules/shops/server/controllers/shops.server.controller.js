@@ -19,6 +19,7 @@ exports.read = function (req, res) {
 /**
  * List of Shops
  */
+ // never use
 exports.list = function (req, res) {
 
   var url ='https://instamarket-xyz-ijygm8ult3yn.runscope.net/api/shops/';
@@ -28,7 +29,7 @@ exports.list = function (req, res) {
      }
    });
 
-  Shop.find({is_shop: 1}).limit(100).exec(function (err, shops) {
+  Shop.find({is_shop: 1}).limit(20).exec(function (err, shops) {
   // Shop.find().sort('-created').limit(10).populate('user', 'displayName').exec(function (err, shops) {
     if (err) {
       return res.status(400).send({
@@ -39,11 +40,18 @@ exports.list = function (req, res) {
     }
   });
 };
-exports.list_by_category = function (req, res, next, category) {
+exports.list_by_category = function (req, res, next) {
   Shop.find({
     is_shop: 1, 
-    categories: category
-  }).exec(function (err, shops) {
+    categories: req.params.category
+  }).select({
+    // _id: 0,
+    username: 1,
+    profile_picture: 1,
+    bio: 1,
+    full_name: 1,
+    counts: 1,
+  }).skip(req.params.offset).limit(20).exec(function (err, shops) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)

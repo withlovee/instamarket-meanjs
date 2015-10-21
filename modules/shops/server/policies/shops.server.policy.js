@@ -18,7 +18,7 @@ exports.invokeRolesPolicies = function () {
       resources: '/api/shops',
       permissions: '*'
     }, {
-      resources: '/api/shops/:category',
+      resources: '/api/shops/:category/:offset',
       permissions: '*'
     }, {
       resources: '/api/shop/:shopId',

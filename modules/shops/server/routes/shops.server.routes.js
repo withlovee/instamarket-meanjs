@@ -11,11 +11,11 @@ module.exports = function (app) {
   app.route('/api/shops').all(shopsPolicy.isAllowed)
     .get(shops.list);
 
-  app.route('/api/shops/:category').all(shopsPolicy.isAllowed)
+  app.route('/api/shops/:category/:offset').all(shopsPolicy.isAllowed)
     .get(shops.list_by_category);
     
   // Finish by binding the shop middleware
-  app.param('category', shops.list_by_category);
+  // app.param('category', shops.list_by_category);
 
   // Single shop routes
   app.route('/api/shop/:shopId').all(shopsPolicy.isAllowed)
