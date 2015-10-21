@@ -2,9 +2,9 @@
 
     <div class="row insta-list category-list">
       <div ng-repeat="cat in categories" class="col-md-4 col-xs-6 item">
-        <a href="shops/{{cat}}" title="{{cat}}">
-          <img ng-src="/modules/core/client/img/categories/{{cat}}.jpg" fallback-src alt="{{cat}}">
-          <span class="text">{{cat}}</span>
+        <a href="shops/{{cat.name}}" title="{{cat.name}}">
+          <img ng-src="/modules/core/client/img/categories/{{cat.file}}.jpg" preload-img fallback-img="/modules/core/client/img/placeholder.jpg" alt="{{cat.name}}">
+          <span class="text">{{cat.name}}</span>
         </a>
       </div>
       <!-- /.col-md-4 col-xs-6 item -->
