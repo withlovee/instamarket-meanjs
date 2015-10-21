@@ -1,24 +1,25 @@
 <section ng-controller="ShopsController" ng-init="find()">
 
     <h1 class="page-title">
-      <span>{{page_name}} ({{shops.length}})</span>
+      <span>{{page_name}} ({{categoryLength.length}})</span>
     </h1>
     <div class="row insta-list shop-list" infinite-scroll="myShops.more()" infinite-scroll-disabled="myShops.busy" infinite-scroll-distance="1">
-      <div ng-repeat="shop in myShops.items" class="">
-        <!--a href="http://instagram.com/{{shop.username}}" target="_blank">
+      <div ng-repeat="shop in myShops.items" class="col-md-4 col-xs-6 item">
+        <a href="http://instagram.com/{{shop.username}}" target="_blank">
           <img ng-src="{{shop.profile_picture}}" fallback-src alt="{{shop.username}}">
-          <span class="text2" ng-bind="shop.username"></span>
+          <span class="text2"> {{shop.username}} ({{shop.counts.followed_by}})</span>
           <span class="hover">
             <span class="vertical-center" ng-bind="shop.full_name"></span>
           </span>
-        </a -->
-        {{shop.username}}<br>
+        </a>
       </div>
       <!-- /.col-md-4 col-xs-6 item -->
     </div>
     <!-- /.row shop-list -->
 
-
+  <div class="text-center" ng-if='myShops.busy'>
+    <h3>กรุณารอสักครู่...</h3>
+  </div>
   <div class="text-center" ng-if="shops.$resolved && !shops.length">
     <h3>ยังไม่มีร้านค้าในหมวดนี้</h3>
   </div>

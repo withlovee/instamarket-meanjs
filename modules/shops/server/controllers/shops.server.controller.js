@@ -40,6 +40,7 @@ exports.list = function (req, res) {
     }
   });
 };
+
 exports.list_by_category = function (req, res, next) {
   Shop.find({
     is_shop: 1, 
@@ -51,7 +52,9 @@ exports.list_by_category = function (req, res, next) {
     bio: 1,
     full_name: 1,
     counts: 1,
-  }).skip(req.params.offset).limit(20).exec(function (err, shops) {
+  }).sort({
+    'counts.followed_by': -1
+  }).skip(req.params.offset).limit(18).exec(function (err, shops) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
@@ -60,6 +63,23 @@ exports.list_by_category = function (req, res, next) {
       res.json(shops);
     }
   });
+};
+
+exports.length_by_category = function (req, res, next) {
+
+  Shop.count({
+    is_shop: 1, 
+    categories: req.params.category
+  }, function (err, count) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.json({ length: count });
+    }
+  });
+
 };
 
 /**

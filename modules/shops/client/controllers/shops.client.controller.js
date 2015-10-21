@@ -7,11 +7,13 @@ angular.module('shops').controller('ShopsController', ['$scope', '$stateParams',
     $scope.offset = 0;
     $scope.myShops = new MyShops($stateParams.category);
 
+    $scope.categoryLength = Shops.length.get({category: $stateParams.category});
+
     // Find a list of Shops
     $scope.find = function () {
       if($stateParams.category){
         $scope.shops = Shops.list.query({category: $stateParams.category, offset: $scope.offset});
-        $scope.offset = $scope.offset + 20;
+        $scope.offset = $scope.offset + 1;
         $scope.page_name = $stateParams.category;
       } else {
         // $scope.shops = Shops.list.query();

@@ -11,6 +11,9 @@ module.exports = function (app) {
   app.route('/api/shops').all(shopsPolicy.isAllowed)
     .get(shops.list);
 
+  app.route('/api/shops/:category/length').all(shopsPolicy.isAllowed)
+    .get(shops.length_by_category);
+
   app.route('/api/shops/:category/:offset').all(shopsPolicy.isAllowed)
     .get(shops.list_by_category);
     
