@@ -16,9 +16,9 @@ module.exports = {
         'public/lib/angular-ui-utils/ui-utils.js',
         'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
         'public/lib/angular-file-upload/angular-file-upload.js',
-        'public/lib/angular-img-fallback/angular.dcb-img-fallback.min.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
         'public/lib/ngInfiniteScroll/build/ng-infinite-scroll.js',
+        'public/lib/angular-preload-image/angular-preload-image.js',
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },
