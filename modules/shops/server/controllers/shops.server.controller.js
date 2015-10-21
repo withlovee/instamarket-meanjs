@@ -42,6 +42,7 @@ exports.list_by_category = function (req, res, next) {
   }).select({
     // _id: 0,
     username: 1,
+    id: 1,
     profile_picture: 1,
     bio: 1,
     full_name: 1,
