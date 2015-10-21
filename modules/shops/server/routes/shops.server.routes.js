@@ -23,6 +23,8 @@ module.exports = function (app) {
   // Single shop routes
   app.route('/api/shop/:shopId').all(shopsPolicy.isAllowed)
     .get(shops.read);
+  app.route('/api/shop/:shopId/no_shop').all(shopsPolicy.isAllowed)
+    .post(shops.mark_no_shop);
 
   // Finish by binding the shop middleware
   app.param('shopId', shops.shopByID);

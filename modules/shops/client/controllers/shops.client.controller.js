@@ -29,6 +29,14 @@ angular.module('shops').controller('ShopsController', ['$scope', '$stateParams',
       });
     };
 
+    $scope.noShop = function(_id, index){
+      console.log('removing ' + index);
+      Shops.noShop.save({ _id: _id });
+
+      $scope.myShops.items[index].deleted = true;
+
+    };
+
 
   }
 ]);

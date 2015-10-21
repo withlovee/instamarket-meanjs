@@ -6,6 +6,7 @@ angular.module('shops').factory('Shops', ['$resource',
     return {
       list: $resource('api/shops/:category/:offset', {category: '@_category', offset: '@_offset'}),
       length: $resource('api/shops/:category/length', {category: '@_category'}),
+      noShop: $resource('api/shop/:shopId/no_shop', {shopId: '@_id'}),
       one: $resource('api/shop/:shopId', {shopId: '@_id'}),
     };
   }

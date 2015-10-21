@@ -119,6 +119,7 @@ body {
 .insta-list .item {
   padding-bottom: 15px;
   padding-top: 15px;
+  position: relative;
 }
 .insta-list .item a {
   display: block;
@@ -196,6 +197,20 @@ body {
   margin-bottom: 15px;
   border-radius: 50px 50px 50px 50px;
 }
+.tools {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.tools a {
+  font-size: 2em;
+}
+.tools a:focus {
+  text-decoration: none;
+}
+.ng-hide {
+  display: none;
+}
 /*--  --*/
 /*--  --*/
 /*--  --*/
@@ -209,16 +224,16 @@ body {
 /*---------------- SMALL MOBILE ----------------*/
 @media (max-width: 550px) {
   .insta-list {
-    margin-left: -5px;
-    margin-right: -5px;
+    margin-left: -3px;
+    margin-right: -3px;
   }
   .insta-list > div {
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
   }
   .insta-list .item {
-    padding-bottom: 5px;
-    padding-top: 5px;
+    padding-bottom: 3px;
+    padding-top: 3px;
   }
 }
 /*---------------- SMALL MOBILE ----------------*/

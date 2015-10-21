@@ -10,13 +10,11 @@ var mongoose = require('mongoose'),
  * Shop Schema
  */
 var ShopSchema = new Schema({
-
-
     username: String,
     profile_picture: String,
     id: { type: Number, unique: true },
     full_name: String,
-    following: [String], // not used
+    following: [String], // never use
     get_info: { type: Boolean, default: false },
     find_following: { type: Boolean, default: false },
     find_followers: Boolean,
@@ -25,6 +23,7 @@ var ShopSchema = new Schema({
     posts_fetched: Boolean,
     is_shop: Number,
     is_shop_verified: Boolean,
+    is_shop_follower: Boolean,
     influencer: { type: Boolean, default: false },
     /* profile */
     counts: {
@@ -34,6 +33,7 @@ var ShopSchema = new Schema({
     },
     bio: String,
     website: String,
+    categories: [String]
 
 }, { collection: 'users' });
 
