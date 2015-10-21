@@ -22,15 +22,16 @@ angular.module('shops').factory('MyShops', function($http) {
   MyShops.prototype.more = function(category) {
     if (this.busy) return;
     this.busy = true;
-    this.offset = this.offset + 20;
     
+    console.log('more ' + this.offset + ' ' + this.busy);
     var url = "/api/shops/" + this.category + "/" + this.offset;
     $http.get(url).then(function(data) {
       var items = data.data;
       for (var i = 0; i < items.length; i++) {
         this.items.push(items[i]);
       }
-      this.offset = this.offset + 20;
+      // console.log('added ' + this.offset);
+      this.offset = this.offset + 18;
       this.busy = false;
     }.bind(this));
 
