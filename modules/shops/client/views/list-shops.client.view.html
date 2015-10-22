@@ -12,7 +12,7 @@
             <span class="vertical-center" ng-bind="shop.full_name"></span>
           </span>
         </a>
-        <div class="tools"><a href="" ng-click="noShop(shop._id, $index)" class="glyphicon glyphicon-remove"></a></div>
+        <div ng-if="isAdmin" class="tools"><a href="" ng-click="noShop(shop._id, $index)" class="glyphicon glyphicon-remove"></a></div>
       </div>
       <!-- /.col-md-4 col-xs-6 item -->
     </div>

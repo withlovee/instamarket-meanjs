@@ -6,7 +6,7 @@ angular.module('shops').controller('ShopsController', ['$scope', '$stateParams',
     $scope.authentication = Authentication;
     $scope.offset = 0;
     $scope.myShops = new MyShops($stateParams.category);
-
+    $scope.isAdmin = $scope.authentication.user && $scope.authentication.user.roles.indexOf('admin') > -1;
     $scope.categoryLength = Shops.length.get({category: $stateParams.category});
 
     // Find a list of Shops
@@ -30,7 +30,7 @@ angular.module('shops').controller('ShopsController', ['$scope', '$stateParams',
     };
 
     $scope.noShop = function(_id, index){
-      console.log('removing ' + index);
+      console.log('removing ' + _id);
       Shops.noShop.save({ _id: _id });
 
       $scope.myShops.items[index].deleted = true;

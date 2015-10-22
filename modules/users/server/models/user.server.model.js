@@ -98,7 +98,7 @@ var UserSchema = new Schema({
   resetPasswordExpires: {
     type: Date
   }
-});
+}, { collection: 'members' });
 
 /**
  * Hook a pre save method to hash the password
