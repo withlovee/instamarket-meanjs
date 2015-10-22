@@ -5,7 +5,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
     // This provides Authentication context.
     $scope.authentication = Authentication;
     $scope.categories = [
-      { name: 'ต้นไม', file: 'ต้นไม้'}, 
+      { name: 'ต้นไม้', file: 'ต้นไม้'}, 
       { name: 'กราฟิค', file: 'กราฟิค'}, 
       { name: 'เบอร์โทรศัพท์', file: 'เบอร์โทรศัพท์'}, 
       { name: 'ที่นอน', file: 'ที่นอน'}, 
