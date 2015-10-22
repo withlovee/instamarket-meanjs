@@ -1,0 +1,348 @@
+/* FONTS */
+@font-face {
+    font-family: 'Thai Sans Neue';
+    src: url('../fonts/thaisansneue-bold.eot');
+    src: url('../fonts/thaisansneue-bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/thaisansneue-bold.woff2') format('woff2'),
+         url('../fonts/thaisansneue-bold.woff') format('woff'),
+         url('../fonts/thaisansneue-bold.ttf') format('truetype'),
+         url('../fonts/thaisansneue-bold.svg#thaisans_neuebold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Thai Sans Neue';
+    src: url('../fonts/thaisansneue-regular-webfont.eot');
+    src: url('../fonts/thaisansneue-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/thaisansneue-regular-webfont.woff2') format('woff2'),
+         url('../fonts/thaisansneue-regular-webfont.woff') format('woff'),
+         url('../fonts/thaisansneue-regular-webfont.ttf') format('truetype'),
+         url('../fonts/thaisansneue-regular-webfont.svg#thaisans_neueregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Thai Sans Neue';
+    src: url('../fonts/thaisansneue-semibold.eot');
+    src: url('../fonts/thaisansneue-semibold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/thaisansneue-semibold.woff2') format('woff2'),
+         url('../fonts/thaisansneue-semibold.woff') format('woff'),
+         url('../fonts/thaisansneue-semibold.ttf') format('truetype'),
+         url('../fonts/thaisansneue-semibold.svg#thaisans_neuesemi_bold') format('svg');
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+
+.textshadow (dark, @alpha) {
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, @alpha);
+}
+.textshadow (light, @alpha) {
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, @alpha);
+}
+.textshadowtop (dark, @alpha) {
+  text-shadow: 0px -1px 1px rgba(0, 0, 0, @alpha);
+}
+.textshadowtop (light, @alpha) {
+  text-shadow: 0px -1px 1px rgba(255, 255, 255, @alpha);
+}
+.bgeffect{
+  -webkit-transition: background 0.3s ease;
+  -moz-transition: background 0.3s ease;
+  -ms-transition: background 0.3s ease;
+  -o-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+}
+.noeffect{
+  -webkit-transition: all 0 ease;
+  -moz-transition: all 0 ease;
+  -ms-transition: all 0 ease;
+  -o-transition: all 0 ease;
+  transition: all 0 ease;
+}
+.effect{
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.effect (@text){
+  -webkit-transition: @text;
+  -moz-transition: @text;
+  -ms-transition: @text;
+  -o-transition: @text;
+  transition: @text;
+}
+.row(@size){
+  .row{
+    margin-left: -@size;
+    margin-right: -@size;
+    &>div{
+      padding-left: @size;
+      padding-right: @size;
+    }
+  }
+}
+.opensans{
+  font-family: 'Open Sans', sans-serif;
+}
+.source{
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.roboto(@weight: 300){
+  font-family: 'Roboto', sans-serif;
+  font-weight: @weight;
+}
+.coloreffect{
+  .effect(color 0.3s ease);
+}
+.gradient (@color1, @color2, @default){
+  background: @default;
+  background: -moz-linear-gradient(top,  @color1 0%, @color2 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@color1), color-stop(100%,@color2));
+  background: -webkit-linear-gradient(top,  @color1 0%,@color2 100%);
+  background: -o-linear-gradient(top,  @color1 0%,@color2 100%);
+  background: -ms-linear-gradient(top,  @color1 0%,@color2 100%);
+  background: linear-gradient(to bottom,  @color1 0%,@color2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="@{color1}", endColorstr="@{color2}",GradientType=0 );
+}
+.gradient (@color1, @color2){
+  background: @color1;
+  background: -moz-linear-gradient(top,  @color1 0%, @color2 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@color1), color-stop(100%,@color2));
+  background: -webkit-linear-gradient(top,  @color1 0%,@color2 100%);
+  background: -o-linear-gradient(top,  @color1 0%,@color2 100%);
+  background: -ms-linear-gradient(top,  @color1 0%,@color2 100%);
+  background: linear-gradient(to bottom,  @color1 0%,@color2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="@{color1}", endColorstr="@{color2}",GradientType=0 );
+}
+.gradientdark (@color1, @color2, @p){
+  @icolor1: darken(@color1, @p);
+  @icolor2: darken(@color2, @p);
+  .gradient (darken(@color1, @p), darken(@color2, @p));
+}
+.innertop (dark, @alpha){
+  -webkit-box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, @alpha);
+  box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, @alpha);
+}
+.innertop (light, @alpha){
+  -webkit-box-shadow: inset 0px 1px 1px 0px rgba(255, 255, 255, @alpha);
+  box-shadow: inset 0px 1px 1px 0px rgba(255, 255, 255, @alpha);
+}
+.bdrs(@v){
+  border-radius: @v;
+}
+@w: 30px;
+@blue: #42b1df;
+@green: #70b828;
+@red: #ff7e00;
+body{
+  font-size: 100%;
+  font-family: 'Thai Sans Neue';
+}
+a{
+  color: #505050;
+  .coloreffect;
+}
+a:hover{
+  color: #f26460;
+  text-decoration: none;
+}
+.clear{
+  display: block;
+  content: '';
+  clear: both;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+.container{
+  max-width: 850px;
+}
+body{
+  // margin-top: 46px;
+  background-color: #fafafa;
+  font-size: 100%;
+}
+/*--  --*/
+.topbar{
+  // position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+  text-align: center;
+  .logo{
+    height: 35px;
+    width: auto;
+    display: inline-block;
+    margin: 10px 0;
+  }
+  .tagline{
+    font-family: 'Open Sans', sans-serif;
+    color: #aaa;
+    font-weight: 400;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+}
+/*--  --*/
+.content-wrapper{
+  margin: 20px 0;
+}
+.insta-list .item{
+  padding-bottom: 15px;
+  padding-top: 15px;
+  position: relative;
+  a{
+    display: block;
+    position: relative;
+    // margin: 15px 0;
+  }
+  img{
+    width: 100%;
+    height: auto;
+    .effect;
+  }
+  .text,.text2{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    background-color: rgba(0,0,0,0.4);
+    text-align: center;
+    display: block;
+    color: #fff;
+    font-size: 2.2em;
+    padding: 3px 15px;
+  }
+  .text2{
+    .opensans;
+    font-size: 1.4em;
+    font-weight: 300;
+    padding: 8px 15px;
+    background-color: #000;
+    // background-color: rgba(60,188,115,0.8);
+    background-color: rgba(0,0,0,0.5);
+    text-align: left;
+  }
+  .hover{
+    display: none;
+    font-size: 2.2em;
+    color: #555;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .vertical-center{
+    position: relative;
+    top: -15px;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  a:hover{
+    img{
+      opacity: 0.8;
+    }
+    .hover{
+      display: table;
+    }
+  }
+}
+.shop-list .item{
+  a:hover{
+    img{
+      opacity: 0.2;
+    }
+  }
+
+}
+.page-title{
+  text-align: center;
+  span{
+    display: inline-block;
+    background-color: #4E9CBD;
+    color: #fff;
+    padding: 8px 40px;
+    margin-bottom: 15px;
+    border-radius: 50px 50px 50px 50px;
+  }
+}
+
+.tools{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  a{
+    font-size: 2em;
+    &:focus{
+      text-decoration: none;
+    }
+  }
+}
+.ng-hide{
+  display: none;
+}
+/*--  --*/
+/*--  --*/
+/*--  --*/
+/*--  --*/
+/*--  --*/
+
+/*---------------- SMALL DESKTOP ----------------*/
+@media (max-width: 1199px){
+}
+/*---------------- TABLET & MOBILE ----------------*/
+@media (max-width: 992px) {
+}
+/*---------------- TABLET & ABOVE ----------------*/
+@media (min-width: 993px) {
+
+}
+/*---------------- TABLET ----------------*/
+@media (min-width: 768px) and (max-width: 992px) {
+
+}
+/*---------------- MOBILE ----------------*/
+@media (max-width: 767px) {
+
+}
+/*---------------- SMALL MOBILE ----------------*/
+@media (max-width: 550px) {
+  .insta-list{
+    margin-left: -3px;
+    margin-right: -3px;
+    &>div{
+      padding-left: 3px;
+      padding-right: 3px;
+    }
+    .item{
+      padding-bottom: 3px;
+      padding-top: 3px;
+    }
+  }
+}
+/*---------------- SMALL MOBILE ----------------*/
+@media (max-width: 480px) {
+}
+/*--  --*/
+/*--  --*/
+/*--  --*/
+/*--  --*/
+/*--  --*/
+/*--  --*/
