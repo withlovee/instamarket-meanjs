@@ -52,6 +52,23 @@ exports.mark_no_shop = function (req, res) {
 
 };
 
+exports.mark_is_shop = function (req, res) {
+  Shop.findByIdAndUpdate(req.params.shopId, { $set: { 
+    is_shop: 1, 
+    is_shop_verified: true,
+  } }, function(err, raw) {
+    if (err) {
+      console.log(err);
+      res.json({success: false});
+    }
+    else{
+      console.log('Saved: ', raw);
+      res.json({success: true});
+    }
+  });
+
+};
+
 exports.list_by_category = function (req, res, next) {
 
   Shop.find({
@@ -65,6 +82,7 @@ exports.list_by_category = function (req, res, next) {
     bio: 1,
     full_name: 1,
     counts: 1,
+    is_shop_verified: 1,
   }).sort({
     'counts.followed_by': -1
   }).skip(req.params.offset).limit(18).exec(function (err, shops) {

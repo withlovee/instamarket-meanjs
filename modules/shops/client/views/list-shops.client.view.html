@@ -7,12 +7,15 @@
       <div ng-repeat="shop in myShops.items" class="col-md-4 col-xs-6 item" ng-hide="shop.deleted">
         <a href="http://instagram.com/{{shop.username}}" target="_blank">
           <img preload-img fallback-img="/modules/core/client/img/placeholder.jpg" ng-src="http://128.199.169.81:8080/img/{{shop.id}}" alt="{{shop.username}}">
-          <span class="text2"> {{shop.username}} ({{shop.counts.followed_by}})</span>
+          <span class="text2"> {{shop.username}} ({{shop.counts.followed_by}}) <i class="glyphicon glyphicon-ok" ng-if="shop.is_shop_verified"></i></span>
           <span class="hover">
-            <span class="vertical-center" ng-bind="shop.full_name"></span>
+            <span class="vertical-center">{{shop.full_name}}<br>{{shop.bio}}</span>
           </span>
         </a>
-        <div ng-if="isAdmin" class="tools"><a href="" ng-click="noShop(shop._id, $index)" class="glyphicon glyphicon-remove"></a></div>
+        <div class="tools">
+          <a href="" ng-click="isShop(shop._id, $index)" class="glyphicon glyphicon-ok"></a> &nbsp;
+          <a href="" ng-click="noShop(shop._id, $index)" class="glyphicon glyphicon-remove"></a>
+        </div>
       </div>
       <!-- /.col-md-4 col-xs-6 item -->
     </div>

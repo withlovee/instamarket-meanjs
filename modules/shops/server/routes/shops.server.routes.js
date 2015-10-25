@@ -25,6 +25,8 @@ module.exports = function (app) {
     .get(shops.read);
   app.route('/api/shop/:shopId/no_shop').all(shopsPolicy.isAllowed)
     .post(shops.mark_no_shop);
+  app.route('/api/shop/:shopId/is_shop').all(shopsPolicy.isAllowed)
+    .post(shops.mark_is_shop);
 
   // Finish by binding the shop middleware
   app.param('shopId', shops.shopByID);

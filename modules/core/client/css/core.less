@@ -214,6 +214,7 @@ body{
     width: 100%;
     height: auto;
     .effect;
+    opacity: 0.2;
   }
   .text,.text2{
     position: absolute;
@@ -239,7 +240,8 @@ body{
     text-align: left;
   }
   .hover{
-    display: none;
+    // display: none;
+    display: table;
     font-size: 2.2em;
     color: #555;
     position: absolute;
@@ -288,12 +290,18 @@ body{
   position: absolute;
   top: 5px;
   right: 5px;
+  width: 100%;
+  text-align: right;
   a{
     font-size: 2em;
     &:focus{
       text-decoration: none;
     }
   }
+}
+
+.insta-list .item .tools a {
+  display: inline-block;
 }
 .ng-hide{
   display: none;

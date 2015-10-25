@@ -38,5 +38,14 @@ angular.module('shops').controller('ShopsController', ['$scope', '$stateParams',
     };
 
 
+    $scope.isShop = function(_id, index){
+      console.log('removing ' + _id);
+      Shops.isShop.save({ _id: _id });
+
+      $scope.myShops.items[index].is_shop_verified = true;
+
+    };
+
+
   }
 ]);
