@@ -248,6 +248,11 @@ body {
   .insta-list .item {
     padding-bottom: 3px;
     padding-top: 3px;
+    overflow: hidden;
+  }
+  .insta-list .item .hover {
+    font-size: 2em;
+    line-height: 1em;
   }
 }
 /*---------------- SMALL MOBILE ----------------*/
